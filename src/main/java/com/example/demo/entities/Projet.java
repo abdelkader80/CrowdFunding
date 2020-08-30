@@ -7,10 +7,10 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,10 +29,10 @@ public class Projet implements Serializable{
 	double somme_demandee;
 	String Descriptif;
 	String Image;
-	@OneToMany
-	Categorie categorie;
 	@ManyToOne
-	private Collection<Don> don;
+	Categorie categorie;
 	@OneToMany
+	private Collection<Don> don;
+	@ManyToOne
 	Createur createur;
 }

@@ -6,8 +6,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +20,7 @@ public class Categorie implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	int id_cat;
 	String nom;
+	@OneToMany
 	private Collection<Projet> projet;
 
 }
